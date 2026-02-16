@@ -3,3 +3,9 @@ setup:
 
 deploy:
 	ansible-playbook -i inventory.ini playbook.yml --become
+
+encrypt-vars:
+	ansible-vault encrypt group_vars/webservers.vault.yml
+
+decrypt-vars:
+	ansible-vault decrypt group_vars/webservers.vault.yml
