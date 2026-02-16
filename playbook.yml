@@ -12,12 +12,14 @@
         mode: "0755"
 
     - name: Render .env from template
+      no_log: true
       ansible.builtin.template:
         src: redmine.env.j2
         dest: /opt/redmine/.env
         mode: "0600"
 
     - name: Run Redmine container
+      no_log: true
       community.docker.docker_container:
         name: "{{ redmine_container_name }}"
         image: "{{ redmine_image }}"

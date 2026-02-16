@@ -1,5 +1,8 @@
-setup:
+setup-server:
 	ansible-playbook -i inventory.ini ./playbooks/setup.yml --become
+
+install:
+	ansible-galaxy install -r requirements.yml
 
 deploy:
 	ansible-playbook -i inventory.ini playbook.yml --become  --ask-vault-pass
