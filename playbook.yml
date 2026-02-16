@@ -1,6 +1,9 @@
 - hosts: webservers
   become: true
 
+  roles:
+    - datadog.dd.agent
+
   tasks:
     - name: Ensure env dir exists
       ansible.builtin.file:

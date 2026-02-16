@@ -1,7 +1,0 @@
-redmine_port: 80
-redmine_image: "redmine:latest"
-redmine_container_name: "redmine"
-redmine_db_host: "rc1b-3onp5mkev5o2mu0c.mdb.yandexcloud.net"
-redmine_db_port: 6432
-redmine_db_name: "db1"
-redmine_db_sslmode: "require"
