@@ -14,5 +14,5 @@ datadog_checks:
     init_config:
     instances:
       - name: redmine
-        url: http://localhost
+        url: https://cheap-domen-for-devops-education.asia
         timeout: 5
