@@ -1,2 +1,5 @@
 setup:
-	ansible-playbook -i inventory.ini setup.yml --become
+	ansible-playbook -i inventory.ini ./playbooks/setup.yml --become
+
+deploy:
+	ansible-playbook -i inventory.ini playbook.yml --become
