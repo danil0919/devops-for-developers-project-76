@@ -1,4 +1,5 @@
-- hosts: webservers
+- name: Deploy Redmine and Datadog
+  hosts: webservers
   become: true
 
   roles:

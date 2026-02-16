@@ -4,8 +4,8 @@
 ### Локальная настройка для начала работы
 make install
 
-### Настройка сервера
-make setup-server
+### Настройка серверов
+make setup-servers
 
 ### Запуск
 make deploy
