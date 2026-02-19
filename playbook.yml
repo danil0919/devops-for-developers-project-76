@@ -3,21 +3,26 @@
   become: true
 
   roles:
-    - datadog.dd.agent
+    - role: datadog.dd.agent
+      tags: monitoring
 
   tasks:
     - name: Ensure env dir exists
       ansible.builtin.file:
-        path: /opt/redmine
+        path: "{{ redmine_path }}"
         state: directory
         mode: "0755"
+      tags:
+        - deploy
 
     - name: Render .env from template
       no_log: true
       ansible.builtin.template:
         src: redmine.env.j2
-        dest: /opt/redmine/.env
+        dest: "{{ redmine_path }}/.env"
         mode: "0600"
+      tags:
+        - deploy
 
     - name: Run Redmine container
       no_log: true
@@ -28,4 +33,6 @@
         restart_policy: unless-stopped
         published_ports:
           - "{{ redmine_port }}:3000"
-        env_file: /opt/redmine/.env
+        env_file:  "{{ redmine_path }}/.env"
+      tags:
+        - deploy
