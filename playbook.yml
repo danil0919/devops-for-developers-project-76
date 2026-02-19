@@ -33,6 +33,6 @@
         restart_policy: unless-stopped
         published_ports:
           - "{{ redmine_port }}:3000"
-        env_file:  "{{ redmine_path }}/.env"
+        env_file: "{{ redmine_path }}/.env"
       tags:
         - deploy
